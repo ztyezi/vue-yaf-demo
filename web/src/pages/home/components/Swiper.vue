@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 轮播图 -->
-    <div class="swiper" style="width: 1195px; height: 400px;">
+    <div class="swiper" style="width: 100%; height: 400px;">
       <Carousel
           v-model="indexItem"
           :height="setting.height"

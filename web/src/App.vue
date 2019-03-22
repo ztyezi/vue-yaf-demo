@@ -3,26 +3,30 @@
     <Layout>
       <Header class="header-menu" :style="{position: 'fixed', width: '100%'}">
         <Menu mode="horizontal" theme="dark" active-name="1">
-          <div>
-            <img class="layout-logo" src="../static/logo.png">
-          </div>
+          <router-link to='/'>
+            <div>
+              <img class="layout-logo" src="../static/logo.png">
+            </div>
+          </router-link>
           <div class="layout-nav">
-            <MenuItem name="1">
-              <Icon type="ios-navigate"></Icon>
-              Item 1
-            </MenuItem>
-            <MenuItem name="2">
-              <Icon type="ios-keypad"></Icon>
-              Item 2
-            </MenuItem>
-            <MenuItem name="3">
-              <Icon type="ios-analytics"></Icon>
-              Item 3
-            </MenuItem>
-            <MenuItem name="4">
-              <Icon type="ios-paper"></Icon>
-              Item 4
-            </MenuItem>
+            <router-link to='/search'>
+              <MenuItem name="1">
+                <Icon type="ios-search" size="18"></Icon>
+                综合查询
+              </MenuItem>
+            </router-link>
+            <router-link to='/diagnose'>
+              <MenuItem name="2">
+                <Icon type="ios-analytics" size="18"></Icon>
+                问题诊断
+              </MenuItem>
+            </router-link>
+            <router-link to='/user'>
+              <MenuItem name="3">
+                <Icon type="ios-contact" size="18"></Icon>
+                用户管理
+              </MenuItem>
+            </router-link>
           </div>
         </Menu>
       </Header>
@@ -53,31 +57,40 @@ export default {
 </script>
 
 <style scoped>
-    .layout{
+    .layout {
         border: 1px solid #d7dde4;
         background: #f5f7f9;
         position: relative;
         border-radius: 4px;
         overflow: hidden;
     }
-    .layout-logo{
+    .ivu-layout-header {
+        background: #515a6e;
+        padding: 0 50px;
+        height: 76px;
+        line-height: 76px;
+    }
+    .ivu-menu-item {
+        top: 8px;
+    }
+    .layout-logo {
         width: 100px;
         height: 30px;
         border-radius: 3px;
         float: left;
         position: relative;
-        top: 15px;
+        top: 22px;
         left: 20px;
     }
-    .header-menu{
+    .header-menu {
       z-index: 1000;
     }
-    .layout-nav{
+    .layout-nav {
         width: 420px;
         margin: 0 auto;
         margin-right: 20px;
     }
-    .layout-footer-center{
+    .layout-footer-center {
         text-align: center;
     }
 </style>
